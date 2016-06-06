@@ -29,42 +29,42 @@ app.get('/', function (req, res, next) {
     res.render('index', {});
 });
 
-// app.post('/add_movie', function (req, res, next) {
+app.post('/add_movie', function (req, res, next) {
 
-//     var title = req.body.title;
-//     var year = req.body.year;
-//     var imdb = req.body.imdb;
+    var title = req.body.title;
+    var year = req.body.year;
+    var imdb = req.body.imdb;
 
-//     mongoClient.connect('mongodb://ashwinlagji:dbpassword123@ds023613.mlab.com:23613/videos', function (err, db) {
-//         assert.equal(null, err);
-//         console.log('sucessfully connected');
-//         db.collection('movies').insertOne({
-//             '_id': imdb
-//             , 'title': title
-//             , 'year': year
-//             , 'imdb': imdb
-//         }, function (err, result) {
+    mongoClient.connect('mongodb://ashwinlagji:dbpassword123@ds023613.mlab.com:23613/videos', function (err, db) {
+        assert.equal(null, err);
+        console.log('sucessfully connected');
+        db.collection('movies').insertOne({
+            '_id': imdb
+            , 'title': title
+            , 'year': year
+            , 'imdb': imdb
+        }, function (err, result) {
 
-//             if (err) {
-//                 return res.render('errorMessage', {
-//                     'message': 'error in inserting ...error:' + err.message
-//                 });
-//             }
-//             console.log("sucessfully inserted");
-//             console.log("results=" + result);
+            if (err) {
+                return res.render('errorMessage', {
+                    'message': 'error in inserting ...error:' + err.message
+                });
+            }
+            console.log("sucessfully inserted");
+            console.log("results=" + result);
 
-//             db.collection('movies').find({}).toArray(function (err, data) {
+            db.collection('movies').find({}).toArray(function (err, data) {
 
 
-//                 res.render('display', {
-//                     'message': data
-//                 });
-//             });
+                res.render('display', {
+                    'message': data
+                });
+            });
 
-//         });
+        });
 
-//     });
-// });
+    });
+});
 
 app.use(function (req, res, next) {
     res.sendStatus(404);
