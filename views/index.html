@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>Add Movie</title>
+    <script>
+    
+        var date=new Date(1464168529);
+        alert(date);
+    
+    </script>
+</head>
+
+<body>
+    
+    <header style="text-align:center">
+    <h2>Movie </h2>
+    
+    </header>
+    <section style="width:300px">
+        <form action="/add_movie" method="POST" >
+            
+            <fieldset>
+                <legend>ADD MOVIE</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label>Title:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="title" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Year</label>
+                    </td>
+                    <td>
+                        <input type="text" name="year" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>IMDB</label>
+                    </td>
+                    <td>
+                        <input type="text" name="imdb" value="" />
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+    </section>
+</body>
+
+</html>

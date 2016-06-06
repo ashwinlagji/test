@@ -1,0 +1,39 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <title>List of movies</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>
+                <label>Title:</label>
+            </td>
+            <td>
+                <label>Year</label>
+            </td>
+            <td>
+                <label>IMDB</label>
+            </td>
+
+        </tr>
+        {% for m in message %}
+        <tr>
+            <td>
+                {{m.title}}
+            </td>
+            <td>
+                {{m.year}}
+            </td>
+            <td>
+                {{m.imdb}}
+            </td>
+        </tr>
+        {% else %} {% endfor %}
+    </table>
+</body>
+
+</html>
