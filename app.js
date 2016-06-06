@@ -5,6 +5,9 @@ var mongoClient = require('mongodb').MongoClient;
 var bodyParser = require('body-parser')
 var assert = require('assert');
 
+
+var port = process.env.PORT || 8080;
+
 app.engine('html', engines.nunjucks);
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
@@ -67,6 +70,6 @@ app.use(function (req, res, next) {
     res.sendStatus(404);
 });
 
-var server = app.listen(3030, function () {
+var server = app.listen(port, function () {
     console.log('server listeniong on port ' + server.address().port);
 });
