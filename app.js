@@ -32,7 +32,7 @@ app.post('/add_movie', function (req, res, next) {
     var year = req.body.year;
     var imdb = req.body.imdb;
 
-    mongoClient.connect('mongodb://localhost:27017/video', function (err, db) {
+    mongoClient.connect('mongodb://ashwinlagji:dbpassword123@ds023613.mlab.com:23613/videos', function (err, db) {
         assert.equal(null, err);
         console.log('sucessfully connected');
         db.collection('movies').insertOne({
